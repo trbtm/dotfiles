@@ -1,3 +1,5 @@
+export STARSHIP_CONFIG=~/.dotfiles/starship.toml
+
 autoload -Uz compinit && compinit
 eval "$(starship init zsh)"
 

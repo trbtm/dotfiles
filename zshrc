@@ -21,3 +21,7 @@ if [ "$(uname 2> /dev/null)" != "Linux" ]; then
     alias uberspace-chimme="ssh chimme@pavo.uberspace.de"
     alias uberspace-vss="ssh vss@tuttle.uberspace.de"
 fi
+
+# ROS related sourcing
+source /opt/ros/melodic/setup.zsh 2> /dev/null
+source ~/robotics/a4/devel/setup.zsh 2> /dev/null

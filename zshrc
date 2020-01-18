@@ -1,4 +1,5 @@
 export STARSHIP_CONFIG=~/.dotfiles/starship.toml
+export SPACESHIP_DIR_TRUNC=1
 
 autoload -Uz compinit && compinit
 eval "$(starship init zsh)"

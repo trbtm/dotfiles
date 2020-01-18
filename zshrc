@@ -1,10 +1,16 @@
 # Starshop config
-export STARSHIP_CONFIG=~/.dotfiles/starship.toml
-export SPACESHIP_DIR_TRUNC=1
+export STARSHIP_CONFIG=~/.dotfiles/starship.toml;
+export SPACESHIP_DIR_TRUNC=1;
 
 # Color folders, executables, etc.
-export CLICOLOR=1;
-export LSCOLORS=exfxcxdxbxegedabagacad;
+if [ "$(uname 2> /dev/null)" != "Linux" ]; then
+    # for macOS
+    export CLICOLOR=1;
+    export LSCOLORS=exfxcxdxbxegedabagacad;
+else
+    # for Ubuntu
+    alias ls='ls --color' 
+fi
 
 # Load starship
 (autoload -Uz compinit && compinit) 2> /dev/null

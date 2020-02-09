@@ -37,9 +37,9 @@ export LC_ALL=en_US.UTF-8
 
 # macOS specific
 if [ "$(uname 2> /dev/null)" != "Linux" ]; then
-    #Activate pyenv   
+    # Activate pyenv   
     eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"    
+    eval "$(pyenv virtualenv-init -)"
 
     alias airprint-n-play-pi="ssh pi@airprint-n-play-pi.local"
     alias uberspace-gbm7="ssh gbm7@wirtanen.uberspace.de"

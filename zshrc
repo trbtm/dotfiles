@@ -2,16 +2,6 @@
 export STARSHIP_CONFIG=~/.dotfiles/starship.toml;
 export SPACESHIP_DIR_TRUNC=1;
 
-# Color folders, executables, etc.
-if [ "$(uname 2> /dev/null)" != "Linux" ]; then
-    # for macOS
-    export CLICOLOR=1;
-    export LSCOLORS=exfxcxdxbxegedabagacad;
-else
-    # for Ubuntu
-    alias ls='ls --color' 
-fi
-
 # Load starship
 (autoload -Uz compinit && compinit) 2> /dev/null
 eval "$(starship init zsh)" 2> /dev/null
@@ -48,9 +38,16 @@ if [ "$(uname 2> /dev/null)" != "Linux" ]; then
     alias uberspace-chimme="ssh chimme@pavo.uberspace.de"
     alias uberspace-vss="ssh vss@tuttle.uberspace.de"
 
+    # Activate colors
+    export CLICOLOR=1;
+    export LSCOLORS=exfxcxdxbxegedabagacad;
+
 # Linux specific
 else
     # ROS related sourcing on Ubuntu
     source /opt/ros/melodic/setup.zsh
     source ~/robotics/a4/devel/setup.zsh
+
+    # Activate colors
+    alias ls='ls --color'
 fi

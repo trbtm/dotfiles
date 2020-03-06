@@ -94,7 +94,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ll='ls -al .'
 
-if [[ -n $SSH_CONNECTION ]]; then
+if ! [[ -n $SSH_CONNECTION ]]; then
   alias airprint-n-play-pi="ssh pi@airprint-n-play-pi.local"
   alias ad-vserver="ssh thore@81.169.202.97"
   alias uberspace-gbm7="ssh gbm7@wirtanen.uberspace.de"

@@ -1,0 +1,6 @@
+[submodule "ohmyzsh"]
+	path = ohmyzsh
+	url = https://github.com/ohmyzsh/ohmyzsh
+[submodule "spaceship-promt"]
+	path = spaceship-promt
+	url = https://github.com/denysdovhan/spaceship-prompt

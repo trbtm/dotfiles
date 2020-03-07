@@ -47,7 +47,7 @@ link_gitconfig()
 }
 
 while true; do
-    read -p "Do you wish to install this program? (y/n) " yn
+    read -p "Do you wish to link ~/.gitconfig? (y/n) " yn
     case $yn in
         [Yy]* ) link_gitconfig; break;;
         [Nn]* ) break;;

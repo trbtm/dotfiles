@@ -32,3 +32,25 @@ rm -rf ./zsh-autosuggestions > /dev/null
 ln -s ../../zsh-autosuggestions ./zsh-autosuggestions
 cd $HOME/.dotfiles
 echo "Linked zsh-autosuggestions."
+
+#
+# ~/.gitconfig
+#
+
+link_gitconfig()
+{
+  cd $HOME
+  rm -rf ./.gitconfig > /dev/null
+  ln -s ./.dotfiles/.gitconfig ./.gitconfig
+  cd $HOME/.dotfiles
+  echo "Linked gitconfig."
+}
+
+while true; do
+    read -p "Do you wish to install this program? (y/n) " yn
+    case $yn in
+        [Yy]* ) link_gitconfig; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done

@@ -11,7 +11,6 @@ export ZSH="$HOME/.dotfiles/ohmyzsh"
 ZSH_THEME="spaceship"
 
 # Starship config
-STARSHIP_CONFIG=$HOME/.dotfiles/starship.toml
 SPACESHIP_DIR_TRUNC=1
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SEPARATE_LINE=false

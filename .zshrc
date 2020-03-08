@@ -92,6 +92,7 @@ alias clc='echo -e "\e[3J";echo "\n";clear;'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ll='ls -al'
+alias nano='nano -l'
 
 if ! [[ -n $SSH_CONNECTION ]]; then
   alias airprint-n-play-pi="ssh pi@airprint-n-play-pi.local"

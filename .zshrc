@@ -91,12 +91,12 @@ export VISUAL='nano'
 alias clc='echo -e "\e[3J";echo "\n";clear;'
 alias ..='cd ..'
 alias ...='cd ../..'
-alias ll='ls -al .'
+alias ll='ls -al'
 
 if ! [[ -n $SSH_CONNECTION ]]; then
   alias airprint-n-play-pi="ssh pi@airprint-n-play-pi.local"
   alias ad-vserver="ssh thore@81.169.202.97"
-  alias uberspace-gbm7="ssh gbm7@wirtanen.uberspace.de"
+  alias uberspace-gbm7="ssh -t gbm7@wirtanen.uberspace.de '/home/gbm7/bin/zsh'"
   alias uberspace-keuk="ssh keuk@suhail.uberspace.de"
   alias uberspace-marq="ssh marq@alkaid.uberspace.de"
   alias uberspace-chimme="ssh chimme@pavo.uberspace.de"

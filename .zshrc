@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,13 +15,7 @@ export ZSH="$HOME/.dotfiles/ohmyzsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
-
-# Starship config
-SPACESHIP_DIR_TRUNC=1
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_PROMPT_SEPARATE_LINE=false
-SPACESHIP_CHAR_SYMBOL='$ '
+ZSH_THEME="powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -74,7 +75,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions)
+plugins=(zsh-autosuggestions pyenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -96,15 +97,13 @@ alias nano='nano -l'
 
 if ! [[ -n $SSH_CONNECTION ]]; then
   alias airprint-n-play-pi="ssh pi@airprint-n-play-pi.local"
-  alias ad-vserver="ssh thore@81.169.202.97"
-  alias uberspace-gbm7="ssh -t gbm7@wirtanen.uberspace.de '/home/gbm7/bin/zsh'"
+  alias ad-vserver="ssh -t thore@81.169.202.97 'ZDOTDIR=~/.zshrc_1 /usr/bin/zsh'"
+  alias uberspace-gbm7="ssh -t gbm7@wirtanen.uberspace.de 'ZDOTDIR=~/.zshrc_1 /home/gbm7/bin/zsh'"
   alias uberspace-keuk="ssh keuk@suhail.uberspace.de"
   alias uberspace-marq="ssh marq@alkaid.uberspace.de"
   alias uberspace-chimme="ssh chimme@pavo.uberspace.de"
   alias uberspace-vss="ssh vss@tuttle.uberspace.de"
 fi
 
-if [ -x "$(command -v pyenv)" ]; then
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-fi
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

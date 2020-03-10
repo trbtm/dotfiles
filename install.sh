@@ -16,16 +16,20 @@ cd $HOME/.dotfiles
 echo "Linked zshrc."
 
 #
-# starship theme
+# powerlevel10k theme
 #
 cd ./ohmyzsh/themes
-rm -rf ./spaceship.zsh-theme > /dev/null
-ln -s ../../spaceship-promt/spaceship.zsh-theme ./spaceship.zsh-theme
+rm -rf ./powerlevel10k.zsh-theme > /dev/null
+ln -s ../../powerlevel10k/powerlevel10k.zsh-theme ./powerlevel10k.zsh-theme
+cd $HOME
+rm -rf ./.p10k.zsh > /dev/null
+ln -s ./.dotfiles/.p10k.zsh ./.p10k.zsh
 cd $HOME/.dotfiles
-echo "Linked spaceship theme."
+
+echo "Linked powerlevel10k theme."
 
 #
-# zsh
+# zsh-autosuggestions
 #
 cd ./ohmyzsh/plugins
 rm -rf ./zsh-autosuggestions > /dev/null

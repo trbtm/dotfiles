@@ -56,9 +56,9 @@
     status                  # exit code of the last command
     command_execution_time  # duration of the last command
     background_jobs         # presence of background jobs
-    direnv                  # direnv status (https://direnv.net/)
-    asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
-    virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
+    # direnv                  # direnv status (https://direnv.net/)
+    # asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
+    # virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
     anaconda                # conda environment (https://conda.io/)
     pyenv                   # python environment (https://github.com/pyenv/pyenv)
     goenv                   # go environment (https://github.com/syndbg/goenv)
@@ -73,29 +73,29 @@
     # laravel_version       # laravel php framework version (https://laravel.com/)
     # java_version          # java version (https://www.java.com/)
     # package               # name@version from package.json (https://docs.npmjs.com/files/package.json)
-    rbenv                   # ruby version from rbenv (https://github.com/rbenv/rbenv)
-    rvm                     # ruby version from rvm (https://rvm.io)
-    fvm                     # flutter version management (https://github.com/leoafarias/fvm)
-    luaenv                  # lua version from luaenv (https://github.com/cehoffman/luaenv)
-    jenv                    # java version from jenv (https://github.com/jenv/jenv)
-    plenv                   # perl version from plenv (https://github.com/tokuhirom/plenv)
-    phpenv                  # php version from phpenv (https://github.com/phpenv/phpenv)
-    haskell_stack           # haskell version from stack (https://haskellstack.org/)
+    # rbenv                   # ruby version from rbenv (https://github.com/rbenv/rbenv)
+    # rvm                     # ruby version from rvm (https://rvm.io)
+    # fvm                     # flutter version management (https://github.com/leoafarias/fvm)
+    # luaenv                  # lua version from luaenv (https://github.com/cehoffman/luaenv)
+    # jenv                    # java version from jenv (https://github.com/jenv/jenv)
+    # plenv                   # perl version from plenv (https://github.com/tokuhirom/plenv)
+    # phpenv                  # php version from phpenv (https://github.com/phpenv/phpenv)
+    # haskell_stack           # haskell version from stack (https://haskellstack.org/)
     kubecontext             # current kubernetes context (https://kubernetes.io/)
-    terraform               # terraform workspace (https://www.terraform.io)
-    aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
-    aws_eb_env              # aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/)
-    azure                   # azure account name (https://docs.microsoft.com/en-us/cli/azure)
-    gcloud                  # google cloud cli account and project (https://cloud.google.com/)
-    google_app_cred         # google application credentials (https://cloud.google.com/docs/authentication/production)
-    context                 # user@hostname
-    nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
-    ranger                  # ranger shell (https://github.com/ranger/ranger)
-    nnn                     # nnn shell (https://github.com/jarun/nnn)
-    vim_shell               # vim shell indicator (:sh)
-    midnight_commander      # midnight commander shell (https://midnight-commander.org/)
-    nix_shell               # nix shell (https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html)
-    vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
+    # terraform               # terraform workspace (https://www.terraform.io)
+    # aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
+    # aws_eb_env              # aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/)
+    # azure                   # azure account name (https://docs.microsoft.com/en-us/cli/azure)
+    # gcloud                  # google cloud cli account and project (https://cloud.google.com/)
+    # google_app_cred         # google application credentials (https://cloud.google.com/docs/authentication/production)
+    # context                 # user@hostname
+    # nordvpn                 # nordvpn connection status, linux only (https://nordvpn.com/)
+    # ranger                  # ranger shell (https://github.com/ranger/ranger)
+    # nnn                     # nnn shell (https://github.com/jarun/nnn)
+    # vim_shell               # vim shell indicator (:sh)
+    # midnight_commander      # midnight commander shell (https://midnight-commander.org/)
+    # nix_shell               # nix shell (https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html)
+    # vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
     # vpn_ip                # virtual private network indicator
     # load                  # CPU load
     # disk_usage            # disk usage
@@ -238,7 +238,7 @@
   # Red prompt symbol if the last command failed.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=196
   # Default prompt symbol.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='❯'
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='$'
   # Prompt symbol in command vi mode.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VICMD_CONTENT_EXPANSION='❮'
   # Prompt symbol in visual vi mode.

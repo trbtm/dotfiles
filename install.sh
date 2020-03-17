@@ -40,7 +40,6 @@ echo "Linked zsh-autosuggestions."
 #
 # ~/.gitconfig
 #
-
 link_gitconfig()
 {
   cd $HOME
@@ -54,6 +53,27 @@ while true; do
     read -p "Do you wish to link ~/.gitconfig? (y/n) " yn
     case $yn in
         [Yy]* ) link_gitconfig; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+#
+# ~/.ssh/config
+#
+link_ssh_config()
+{
+  cd $HOME
+  rm -rf ./.ssh/config > /dev/null
+  ln -s ./.dotfiles/ssh_config ./.ssh/config
+  cd $HOME/.dotfiles
+  echo "Linked ssh/config."
+}
+
+while true; do
+    read -p "Do you wish to link ./.ssh/config? (y/n) " yn
+    case $yn in
+        [Yy]* ) link_ssh_config; break;;
         [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac

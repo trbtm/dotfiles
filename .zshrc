@@ -97,8 +97,8 @@ alias nano='nano -l'
 
 if ! [[ -n $SSH_CONNECTION ]]; then
   alias airprint-n-play-pi="ssh pi@airprint-n-play-pi.local"
-  alias ad-vserver="ssh -t thore@62.171.167.26 'ZDOTDIR=~/.zshrc_1 /usr/bin/zsh'"
-  alias ad-vserver-old="ssh -t thore@81.169.202.97 'ZDOTDIR=~/.zshrc_1 /usr/bin/zsh'"
+  alias ad-vserver="ssh thore@62.171.167.26"
+  alias ad-vserver-bash="ssh -t thore@62.171.167.26 /bin/bash -l"
   alias uberspace-gbm7="ssh -t gbm7@wirtanen.uberspace.de 'ZDOTDIR=~/.zshrc_1 /home/gbm7/bin/zsh'"
   alias uberspace-keuk="ssh keuk@suhail.uberspace.de"
   alias uberspace-marq="ssh marq@alkaid.uberspace.de"

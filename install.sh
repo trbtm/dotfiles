@@ -2,7 +2,9 @@
 
 # Legacy
 rm -f ~/.p10k.zsh
-rm -rf ~/.zshrc
+rm -f ~/.zshrc
+rm -f ~/.zsh_history
+rm -f ~/.zcompdump
 
 
 git --git-dir ~/.dotfiles/.git submodule init

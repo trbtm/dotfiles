@@ -4,7 +4,7 @@
 rm -f ~/.p10k.zsh
 rm -f ~/.zshrc
 rm -f ~/.zsh_history
-rm -f ~/.zcompdump
+rm -f ~/.zcompdump*
 
 
 git --git-dir ~/.dotfiles/.git submodule init

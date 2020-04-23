@@ -1,42 +1,26 @@
 #!/usr/bin/env bash
 
-cd $HOME/.dotfiles
+# Legacy
+rm -f ~/.p10k.zsh
+rm -rf ~/.zshrc
 
-git submodule init
-git submodule update
+
+git --git-dir ~/.dotfiles/.git submodule init
+git --git-dir ~/.dotfiles/.git submodule update
 echo "Initialized git submodules."
 
 #
-# zshrc
+# bash
 #
-
-rm -rf $HOME/.zshrc > /dev/null
-ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
-echo "Linked zshrc."
-
-#
-# powerlevel10k theme
-#
-rm -rf $HOME/.dotfiles/ohmyzsh/themes/powerlevel10k.zsh-theme > /dev/null
-ln -s $HOME/.dotfiles/powerlevel10k/powerlevel10k.zsh-theme $HOME/.dotfiles/ohmyzsh/themes/powerlevel10k.zsh-theme
-rm -rf $HOME/.p10k.zsh > /dev/null
-ln -s $HOME/.dotfiles/.p10k.zsh $HOME/.p10k.zsh
-
-echo "Linked powerlevel10k theme."
-
-#
-# zsh-autosuggestions
-#
-rm -rf $HOME/.dotfiles/ohmyzsh/plugins/zsh-autosuggestions > /dev/null
-ln -s $HOME/.dotfiles/zsh-autosuggestions $HOME/.dotfiles/ohmyzsh/plugins/zsh-autosuggestions
-echo "Linked zsh-autosuggestions."
+rm -f ~/.bash_aliases
+ln -s ~/.dotfiles/.aliases ~/.bash_aliases
 
 #
 # ~/.gitconfig
 #
 link_gitconfig()
 {
-  rm -rf $HOME/.gitconfig > /dev/null
+  rm -rf $HOME/.gitconfig
   ln -s $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
   echo "Linked gitconfig."
 }
@@ -55,13 +39,13 @@ done
 #
 link_ssh_config()
 {
-  rm -rf $HOME/.ssh/config > /dev/null
-  ln -s $HOME/.dotfiles/ssh_config $HOME/.ssh/config
-  echo "Linked ssh/config."
+  rm -rf ~/.ssh/config
+  ln -s ~/.dotfiles/ssh_config ~/.ssh/config
+  echo "Linked ~/.ssh/config."
 }
 
 while true; do
-    read -p "Do you wish to link ./.ssh/config? (y/n) " yn
+    read -p "Do you wish to link ~/.ssh/config? (y/n) " yn
     case $yn in
         [Yy]* ) link_ssh_config; break;;
         [Nn]* ) break;;

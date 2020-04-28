@@ -5,6 +5,9 @@ rm -f ~/.p10k.zsh
 rm -f ~/.zshrc
 rm -f ~/.zsh_history
 rm -f ~/.zcompdump*
+rm -rf ~/.dotfiles/ohmyzsh
+rm -rf ~/.dotfiles/powerlevel10k
+rm -rf ~/.dotfiles/zsh-autosuggestions
 
 
 git --git-dir ~/.dotfiles/.git submodule init

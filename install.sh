@@ -9,24 +9,27 @@ rm -rf ~/.dotfiles/ohmyzsh
 rm -rf ~/.dotfiles/powerlevel10k
 rm -rf ~/.dotfiles/zsh-autosuggestions
 
-
-git --git-dir ~/.dotfiles/.git submodule init
-git --git-dir ~/.dotfiles/.git submodule update
-echo "Initialized git submodules."
-
 #
 # bash
 #
 rm -f ~/.bash_aliases
-ln -s ~/.dotfiles/.aliases ~/.bash_aliases
+ln -s ~/.dotfiles/.aliases.bash ~/.bash_aliases
+
+#
+# fish
+#
+curl -fsSL https://starship.rs/install.sh | bash
+mkdir -p ~/.config/fish/
+rm -f ~/.config/fish/config.fish
+ln -s ~/.dotfiles/config.fish ~/.config/fish/config.fish
 
 #
 # ~/.gitconfig
 #
 link_gitconfig()
 {
-  rm -rf $HOME/.gitconfig
-  ln -s $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
+  rm -rf ~/.gitconfig
+  ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
   echo "Linked gitconfig."
 }
 

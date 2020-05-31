@@ -13,7 +13,7 @@ rm -rf ~/.dotfiles/zsh-autosuggestions
 # bash
 #
 rm -f ~/.bash_aliases
-ln -s ~/.dotfiles/.aliases.bash ~/.bash_aliases
+ln -s ~/.dotfiles/aliases.bash ~/.bash_aliases
 
 #
 # fish

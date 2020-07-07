@@ -1,5 +1,19 @@
 #!/usr/bin/env bash
 
+user_yes_no()
+{
+    while true; do
+        read -p "$1 (y/n) " yn
+        case $yn in
+        [Yy]* ) 
+            $2;
+            break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+        esac
+    done
+}
+
 # Legacy
 rm -f ~/.p10k.zsh
 rm -f ~/.zshrc
@@ -18,10 +32,20 @@ ln -s ~/.dotfiles/aliases.bash ~/.bash_aliases
 #
 # fish
 #
-curl -fsSL https://starship.rs/install.sh | bash
-mkdir -p ~/.config/fish/
-rm -f ~/.config/fish/config.fish
-ln -s ~/.dotfiles/config.fish ~/.config/fish/config.fish
+
+configure_fish()
+{
+  bash <( curl -fsSL https://starship.rs/install.sh )
+  mkdir -p ~/.config/fish/
+  rm -f ~/.config/fish/config.fish
+  ln -s ~/.dotfiles/config.fish ~/.config/fish/config.fish
+  
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    fish -c "omf install osx" > /dev/null 2>&1
+  fi
+}
+
+user_yes_no "Do you want to configure the fish shell?" configure_fish
 
 #
 # ~/.gitconfig
@@ -33,14 +57,19 @@ link_gitconfig()
   echo "Linked gitconfig."
 }
 
-while true; do
-    read -p "Do you wish to link ~/.gitconfig? (y/n) " yn
-    case $yn in
-        [Yy]* ) link_gitconfig; break;;
-        [Nn]* ) break;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
+user_yes_no "Do you wish to link ~/.gitconfig?" link_gitconfig
+
+#
+# ~/.gitignore
+#
+link_gitignore()
+{
+  rm -rf ~/.gitignore
+  ln -s ~/.dotfiles/.gitignore ~/.gitignore
+  echo "Linked gitignore."
+}
+
+user_yes_no "Do you wish to link ~/.gitignore?" link_gitignore
 
 #
 # ~/.ssh/config
@@ -52,11 +81,4 @@ link_ssh_config()
   echo "Linked ~/.ssh/config."
 }
 
-while true; do
-    read -p "Do you wish to link ~/.ssh/config? (y/n) " yn
-    case $yn in
-        [Yy]* ) link_ssh_config; break;;
-        [Nn]* ) break;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
+user_yes_no "Do you wish to link ~/.ssh/config?" link_ssh_config

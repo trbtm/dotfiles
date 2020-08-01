@@ -1,0 +1,12 @@
+add_newline = false
+
+[line_break]
+disabled = true
+
+[character]
+symbol = "$"
+
+[python]
+pyenv_version_name = true
+
+

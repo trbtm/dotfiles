@@ -14,38 +14,24 @@ user_yes_no()
     done
 }
 
-# Legacy
-rm -f ~/.p10k.zsh
-rm -f ~/.zshrc
-rm -f ~/.zsh_history
-rm -f ~/.zcompdump*
-rm -rf ~/.dotfiles/ohmyzsh
-rm -rf ~/.dotfiles/powerlevel10k
-rm -rf ~/.dotfiles/zsh-autosuggestions
-
 #
 # bash
 #
 rm -f ~/.bash_aliases
-ln -s ~/.dotfiles/aliases.bash ~/.bash_aliases
+ln -s ~/.dotfiles/bash/aliases.bash ~/.bash_aliases
 
-#
-# fish
-#
-
-configure_fish()
+configure_bash()
 {
   bash <( curl -fsSL https://starship.rs/install.sh )
-  mkdir -p ~/.config/fish/
-  rm -f ~/.config/fish/config.fish
-  ln -s ~/.dotfiles/config.fish ~/.config/fish/config.fish
   
-  if [[ "$OSTYPE" == "darwin"* ]]; then
-    fish -c "omf install osx" > /dev/null 2>&1
-  fi
+  rm -rf ~/.config/starship.toml
+  ln -s ~/.dotfiles/bash/starship.toml ~/.config/starship.toml
+
+  rm -f ~/.bashrc
+  ln -s ~/.dotfiles/bash/.bashrc ~/.bashrc
 }
 
-user_yes_no "Do you want to configure the fish shell?" configure_fish
+user_yes_no "Do you want to configure the bash shell?" configure_bash
 
 #
 # ~/.gitconfig
@@ -53,7 +39,7 @@ user_yes_no "Do you want to configure the fish shell?" configure_fish
 link_gitconfig()
 {
   rm -rf ~/.gitconfig
-  ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+  ln -s ~/.dotfiles/git/.gitconfig ~/.gitconfig
   echo "Linked gitconfig."
 }
 
@@ -65,7 +51,7 @@ user_yes_no "Do you wish to link ~/.gitconfig?" link_gitconfig
 link_gitignore()
 {
   rm -rf ~/.gitignore
-  ln -s ~/.dotfiles/.gitignore ~/.gitignore
+  ln -s ~/.dotfiles/git/.gitignore ~/.gitignore
   echo "Linked gitignore."
 }
 

@@ -5,8 +5,9 @@ export LANG=en_US.UTF-8
 export EDITOR='nano'
 export VISUAL='nano'
 
-# Common shortcuts
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ll='ls -alh'
-alias nano='nano -l'
+# pyenv
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+fi

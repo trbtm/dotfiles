@@ -10,7 +10,9 @@ export VISUAL='nano'
 export PATH=$HOME/.cargo/bin:$PATH
 
 # pyenv
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+if [ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]; then
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+fi
 
 if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"

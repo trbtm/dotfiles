@@ -55,6 +55,7 @@ configure_starship()
 {
   bash <( curl -fsSL https://starship.rs/install.sh )
   rm -rf ~/.config/starship.toml
+  mkdir ~/.config
   ln -s ~/.dotfiles/shell/starship.toml ~/.config/starship.toml
 }
 

@@ -4,7 +4,8 @@ add_newline = false
 disabled = true
 
 [character]
-symbol = "$"
+success_symbol = "[\\$](bold green)"
+error_symbol = "[\\$](bold red)"
 
 [python]
 pyenv_version_name = true

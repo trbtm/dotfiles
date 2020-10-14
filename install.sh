@@ -53,9 +53,14 @@ user_yes_no "Do you want to configure the zsh shell?" configure_zsh
 
 configure_starship()
 {
+  if ! command -v curl &> /dev/null; then
+    echo "Please install curl on your system."
+    echo "e.g. via 'sudo apt install curl'"
+    exit 1
+  fi
   bash <( curl -fsSL https://starship.rs/install.sh )
-  rm -rf ~/.config/starship.toml
-  mkdir ~/.config
+  rm -f ~/.config/starship.toml
+  mkdir -p ~/.config
   ln -s ~/.dotfiles/shell/starship.toml ~/.config/starship.toml
 }
 
@@ -66,7 +71,7 @@ user_yes_no "Do you want to install and configure starship prompt?" configure_st
 #
 link_gitconfig()
 {
-  rm -rf ~/.gitconfig
+  rm -f ~/.gitconfig
   ln -s ~/.dotfiles/git/.gitconfig ~/.gitconfig
   echo "Linked gitconfig."
 }
@@ -78,7 +83,7 @@ user_yes_no "Do you wish to link ~/.gitconfig?" link_gitconfig
 #
 link_gitignore()
 {
-  rm -rf ~/.gitignore
+  rm -f ~/.gitignore
   ln -s ~/.dotfiles/git/.gitignore ~/.gitignore
   echo "Linked gitignore."
 }
@@ -90,7 +95,7 @@ user_yes_no "Do you wish to link ~/.gitignore?" link_gitignore
 #
 link_ssh_config()
 {
-  rm -rf ~/.ssh/config
+  rm -f ~/.ssh/config
   ln -s ~/.dotfiles/ssh_config ~/.ssh/config
   echo "Linked ~/.ssh/config."
 }

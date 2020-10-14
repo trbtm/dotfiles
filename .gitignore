@@ -1,2 +1,2 @@
 shell/custom/**
-!shell/custom/.gitkeep
+!shell/custom/index.sh

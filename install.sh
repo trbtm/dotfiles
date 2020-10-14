@@ -85,6 +85,7 @@ link_gitignore()
 {
   rm -f ~/.gitignore
   ln -s ~/.dotfiles/git/.gitignore ~/.gitignore
+  git config --global core.excludesFile '~/.gitignore'
   echo "Linked gitignore."
 }
 

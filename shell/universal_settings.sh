@@ -6,7 +6,7 @@ export LIBVIRT_DEFAULT_URI="qemu:///system"
 export EDITOR='nano'
 export VISUAL='nano'
 
-for f in ~/.dotfiles/shell/custom/*.sh; do source $f; done
+source ~/.dotfiles/shell/custom/*.sh
 
 # rust
 export PATH=$HOME/.cargo/bin:$PATH

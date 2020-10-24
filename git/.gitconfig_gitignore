@@ -1,4 +1,5 @@
-# Update .gitconfig_gitignore as well
 [user]
 	name = Thore Bartholomäus
 	email = thore.bar@gmail.com
+[core]
+	excludesFile = ~/.gitignore

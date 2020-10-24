@@ -69,11 +69,13 @@ user_yes_no "Do you want to install and configure starship prompt?" configure_st
 #
 # ~/.gitconfig
 #
+GIT_CONFIG=false
 link_gitconfig()
 {
   rm -f ~/.gitconfig
   ln -s ~/.dotfiles/git/.gitconfig ~/.gitconfig
   echo "Linked gitconfig."
+  GIT_CONFIG=true
 }
 
 user_yes_no "Do you wish to link ~/.gitconfig?" link_gitconfig
@@ -85,20 +87,13 @@ link_gitignore()
 {
   rm -f ~/.gitignore
   ln -s ~/.dotfiles/git/.gitignore ~/.gitignore
-  git config --global core.excludesFile '~/.gitignore'
+  if [ "$GIT_CONFIG" = true ]; then
+    rm -f ~/.gitconfig
+    ln -s ~/.dotfiles/git/.gitconfig_gitignore ~/.gitconfig
+  else
+    git config --global core.excludesFile '~/.gitignore'
+  fi
   echo "Linked gitignore."
 }
 
 user_yes_no "Do you wish to link ~/.gitignore?" link_gitignore
-
-#
-# ~/.ssh/config
-#
-link_ssh_config()
-{
-  rm -f ~/.ssh/config
-  ln -s ~/.dotfiles/ssh_config ~/.ssh/config
-  echo "Linked ~/.ssh/config."
-}
-
-user_yes_no "Do you wish to link ~/.ssh/config?" link_ssh_config

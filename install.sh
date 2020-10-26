@@ -39,7 +39,7 @@ configure_zsh()
   ln -s ~/.dotfiles/shell/.zshrc ~/.zshrc
   rm -rf ~/.dotfiles/ohmyzsh
 
-
+  cd ~/.dotfiles
   git --git-dir=$HOME/.dotfiles/.git submodule init
   git --git-dir=$HOME/.dotfiles/.git submodule update
   git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.dotfiles/ohmyzsh/plugins/zsh-autosuggestions

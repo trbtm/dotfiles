@@ -1,0 +1,40 @@
+{
+    "projects.configPath": "~/.vscode_projects.json",
+    "workbench.startupEditor": "newUntitledFile",
+    "window.zoomLevel": 0,
+    "vsicons.dontShowNewVersionMessage": true,
+    "telemetry.enableTelemetry": false,
+    "gitlens.advanced.telemetry.enabled": false,
+    "extensions.ignoreRecommendations": false,
+    "editor.tabSize": 4,
+    "editor.rulers": [120],
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#464451"
+    },
+    "editor.fontFamily": "MesloLGS NF",
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontFamily": "Fira Code",
+    "debug.showInStatusBar": "never",
+    "debug.toolBarLocation": "hidden",
+    "projects.statusbarEnabled": false,
+    "debug.openExplorerOnEnd": true,
+    "workbench.colorTheme": "SynthWave '84",
+    "synthwave84.brightness": 0.75,
+    "remote.SSH.defaultExtensions": [
+        "eamodio.gitlens",
+        "mrmlnc.vscode-duplicate",
+        "oderwat.indent-rainbow",
+        "ryu1kn.partial-diff",
+        "2gua.rainbow-brackets",
+        "fabiospampinato.vscode-statusbar-debugger",
+        "robbowen.synthwave-vscode"
+    ],
+    "explorer.confirmDragAndDrop": false,
+    "[python]": {
+        "editor.insertSpaces": true,
+        "editor.formatOnSave": true
+    },
+    "python.formatting.provider": "black",
+    "python.showStartPage": false,
+    "workbench.iconTheme": "vscode-icons",
+}

@@ -104,6 +104,7 @@ user_yes_no "Do you wish to link ~/.gitignore?" link_gitignore
 link_vscode_settings()
 {
   rm -f ~/.config/Code/User/settings.json
+  mkdir -p ~/.config/Code/User
   ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
   echo "Linked Visual Studio Code Settings."
 }

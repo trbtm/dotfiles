@@ -69,6 +69,8 @@ export ZSH=$HOME/.dotfiles/ohmyzsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
+		osx
+		pyenv
         zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
@@ -78,7 +80,11 @@ then
     eval "$(starship init zsh)"
 fi
 
-alias ls='ls --color=auto'
+if [ "$(uname)" == "Darwin" ]; then
+    alias ls='ls -G'
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    alias ls='ls --color=auto'
+fi
 
 source ~/.dotfiles/shell/aliases.sh
 source ~/.dotfiles/shell/universal_settings.sh

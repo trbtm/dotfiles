@@ -80,9 +80,9 @@ then
     eval "$(starship init zsh)"
 fi
 
-if [ "$(uname)" == "Darwin" ]; then
+if [ "$(uname)" = "Darwin" ]; then
     alias ls='ls -G'
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
     alias ls='ls --color=auto'
 fi
 

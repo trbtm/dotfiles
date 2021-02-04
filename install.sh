@@ -1,18 +1,8 @@
 #!/usr/bin/env bash
 
-user_yes_no()
-{
-    while true; do
-        read -p "$1 (y/n) " yn
-        case $yn in
-        [Yy]* ) 
-            $2;
-            break;;
-        [Nn]* ) break;;
-        * ) echo "Please answer yes or no.";;
-        esac
-    done
-}
+source $(dirname $0)/install_functions.sh
+
+THE_HOME="${HOME/\/c\//c:/}"
 
 #
 # bash
@@ -20,11 +10,11 @@ user_yes_no()
 
 configure_bash()
 {
-  rm -f ~/.bash_aliases
-  ln -s ~/.dotfiles/shell/aliases.sh ~/.bash_aliases
+  rm -f $THE_HOME/.bash_aliases
+  ln -s $THE_HOME/.dotfiles/shell/aliases.sh $THE_HOME/.bash_aliases
 
-  rm -f ~/.bashrc
-  ln -s ~/.dotfiles/shell/.bashrc ~/.bashrc
+  rm -f $THE_HOME/.bashrc
+  ln -s $THE_HOME/.dotfiles/shell/.bashrc $THE_HOME/.bashrc
 }
 
 user_yes_no "Do you want to configure the bash shell?" configure_bash
@@ -35,14 +25,14 @@ user_yes_no "Do you want to configure the bash shell?" configure_bash
 
 configure_zsh()
 {
-  rm -f ~/.zshrc
-  ln -s ~/.dotfiles/shell/.zshrc ~/.zshrc
-  rm -rf ~/.dotfiles/ohmyzsh
+  rm -f $THE_HOME/.zshrc
+  ln -s $THE_HOME/.dotfiles/shell/.zshrc $THE_HOME/.zshrc
+  rm -rf $THE_HOME/.dotfiles/ohmyzsh
 
-  cd ~/.dotfiles
-  git --git-dir=$HOME/.dotfiles/.git submodule init
-  git --git-dir=$HOME/.dotfiles/.git submodule update
-  git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.dotfiles/ohmyzsh/plugins/zsh-autosuggestions
+  cd $THE_HOME/.dotfiles
+  git --git-dir=$THE_HOME/.dotfiles/.git submodule init
+  git --git-dir=$THE_HOME/.dotfiles/.git submodule update
+  git clone https://github.com/zsh-users/zsh-autosuggestions $THE_HOME/.dotfiles/ohmyzsh/plugins/zsh-autosuggestions
 }
 
 user_yes_no "Do you want to configure the zsh shell?" configure_zsh
@@ -59,21 +49,21 @@ configure_starship()
     exit 1
   fi
   bash <( curl -fsSL https://starship.rs/install.sh )
-  rm -f ~/.config/starship.toml
-  mkdir -p ~/.config
-  ln -s ~/.dotfiles/shell/starship.toml ~/.config/starship.toml
+  rm -f $THE_HOME/.config/starship.toml
+  mkdir -p $THE_HOME/.config
+  ln -s $THE_HOME/.dotfiles/shell/starship.toml $THE_HOME/.config/starship.toml
 }
 
 user_yes_no "Do you want to install and configure starship prompt?" configure_starship
 
 #
-# ~/.gitconfig
+# $THE_HOME/.gitconfig
 #
 GIT_CONFIG=false
 link_gitconfig()
 {
-  rm -f ~/.gitconfig
-  ln -s ~/.dotfiles/git/.gitconfig ~/.gitconfig
+  rm -f $THE_HOME/.gitconfig
+  ln -s $THE_HOME/.dotfiles/git/.gitconfig $THE_HOME/.gitconfig
   echo "Linked gitconfig."
   GIT_CONFIG=true
 }
@@ -81,17 +71,17 @@ link_gitconfig()
 user_yes_no "Do you wish to link ~/.gitconfig?" link_gitconfig
 
 #
-# ~/.gitignore
+# $THE_HOME/.gitignore
 #
 link_gitignore()
 {
-  rm -f ~/.gitignore
-  ln -s ~/.dotfiles/git/.gitignore ~/.gitignore
+  rm -f $THE_HOME/.gitignore
+  ln -s $THE_HOME/.dotfiles/git/.gitignore $THE_HOME/.gitignore
   if [ "$GIT_CONFIG" = true ]; then
-    rm -f ~/.gitconfig
-    ln -s ~/.dotfiles/git/.gitconfig_gitignore ~/.gitconfig
+    rm -f $THE_HOME/.gitconfig
+    ln -s $THE_HOME/.dotfiles/git/.gitconfig_gitignore $THE_HOME/.gitconfig
   else
-    git config --global core.excludesFile '~/.gitignore'
+    git config --global core.excludesFile '$THE_HOME/.gitignore'
   fi
   echo "Linked gitignore."
 }
@@ -103,19 +93,29 @@ user_yes_no "Do you wish to link ~/.gitignore?" link_gitignore
 #
 link_vscode_settings_linux()
 {
-  rm -f ~/.config/Code/User/settings.json
-  mkdir -p ~/.config/Code/User
-  ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
-  echo "Linked Visual Studio Code Settings."
+  rm -f $THE_HOME/.config/Code/User/settings.json
+  mkdir -p $THE_HOME/.config/Code/User
+  ln -s $THE_HOME/.dotfiles/vscode/settings.json $THE_HOME/.config/Code/User/settings.json
+  echo "Linked Visual Studio Code Settings. (Linux)"
 }
 
-user_yes_no "Do you wish to link ~/.config/Code/User/settings.json?" link_vscode_settings_linux
+user_yes_no "Do you wish to link ~/.config/Code/User/settings.json? (Linux)" link_vscode_settings_linux
+
+link_vscode_settings_windows()
+{
+  rm -f $THE_HOME/AppData/Roaming/Code/User/settings.json
+  mkdir -p $THE_HOME/AppData/Roaming/Code/User/
+  link $THE_HOME/AppData/Roaming/Code/User/settings.json $THE_HOME/.dotfiles/vscode/settings.json
+  echo "Linked Visual Studio Code Settings. (Windows)"
+}
+
+user_yes_no "Do you wish to link ~/AppData/Roaming/Code/User/settings.json? (Windows)" link_vscode_settings_windows
 
 link_vscode_settings_mac()
 {
-  rm -f ~/Library/Application\ Support/Code/User/settings.json
-  ln -s ~/.dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-  echo "Linked Visual Studio Code Settings."
+  rm -f $THE_HOME/Library/Application\ Support/Code/User/settings.json
+  ln -s $THE_HOME/.dotfiles/vscode/settings.json $THE_HOME/Library/Application\ Support/Code/User/settings.json
+  echo "Linked Visual Studio Code Settings. (macOS)"
 }
 
-user_yes_no "Do you wish to link ~/Library/Application Support/Code/User/settings.json?" link_vscode_settings_mac
+user_yes_no "Do you wish to link ~/Library/Application Support/Code/User/settings.json? (macOS)" link_vscode_settings_mac

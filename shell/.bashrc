@@ -116,9 +116,11 @@ if ! shopt -oq posix; then
     fi
 fi
 
-if command -v starship &> /dev/null
-then
+if command -v starship &> /dev/null; then
     eval "$(starship init bash)"
+else
+    PS1=${PS1%?}
+    PS1=${PS1%?}\n'$ '
 fi
 
 source ~/.dotfiles/shell/universal_settings.sh

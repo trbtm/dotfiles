@@ -101,11 +101,21 @@ user_yes_no "Do you wish to link ~/.gitignore?" link_gitignore
 #
 # Visual Studio Code
 #
-link_vscode_settings()
+link_vscode_settings_linux()
 {
   rm -f ~/.config/Code/User/settings.json
+  mkdir -p ~/.config/Code/User
   ln -s ~/.dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
   echo "Linked Visual Studio Code Settings."
 }
 
-user_yes_no "Do you wish to link ~/.config/Code/User/settings.json?" link_vscode_settings
+user_yes_no "Do you wish to link ~/.config/Code/User/settings.json?" link_vscode_settings_linux
+
+link_vscode_settings_mac()
+{
+  rm -f ~/Library/Application\ Support/Code/User/settings.json
+  ln -s ~/.dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+  echo "Linked Visual Studio Code Settings."
+}
+
+user_yes_no "Do you wish to link ~/Library/Application Support/Code/User/settings.json?" link_vscode_settings_mac

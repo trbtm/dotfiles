@@ -1,13 +1,14 @@
 {
-    "projects.configPath": "~/.vscode_projects.json",
     "workbench.startupEditor": "newUntitledFile",
     "window.zoomLevel": 0,
     "vsicons.dontShowNewVersionMessage": true,
     "telemetry.enableTelemetry": false,
     "gitlens.advanced.telemetry.enabled": false,
     "extensions.ignoreRecommendations": true,
+    "editor.insertSpaces": true,
     "editor.tabSize": 4,
     "editor.rulers": [120],
+    "editor.tabCompletion": "on",
     "workbench.colorCustomizations": {
         "editorRuler.foreground": "#464451"
     },
@@ -30,12 +31,31 @@
         "robbowen.synthwave-vscode"
     ],
     "explorer.confirmDragAndDrop": false,
+    "workbench.iconTheme": "vscode-icons",
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "search.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/.direnv*": true
+
+    },
+    "workbench.editorAssociations": [],
     "[python]": {
-        "editor.insertSpaces": true,
         "editor.formatOnSave": true
     },
     "python.formatting.provider": "black",
     "python.showStartPage": false,
-    "workbench.iconTheme": "vscode-icons",
     "jupyter.askForKernelRestart": false,
+    "[typescript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }

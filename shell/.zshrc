@@ -30,7 +30,7 @@ export ZSH=$HOME/.dotfiles/ohmyzsh
 # DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -70,13 +70,11 @@ export ZSH=$HOME/.dotfiles/ohmyzsh
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
 		osx
-		pyenv
         zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-if command -v starship &> /dev/null
-then
+if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
 fi
 

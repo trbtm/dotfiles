@@ -1,4 +1,5 @@
 {
+    "projects.configPath": "~/.vscode_projects.json",
     "workbench.startupEditor": "newUntitledFile",
     "window.zoomLevel": 0,
     "vsicons.dontShowNewVersionMessage": true,

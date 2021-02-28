@@ -48,7 +48,8 @@ configure_starship()
     echo "e.g. via 'sudo apt install curl'"
     exit 1
   fi
-  bash <( curl -fsSL https://starship.rs/install.sh )
+  # bash <( curl -fsSL https://starship.rs/install.sh )
+  curl -fsSL https://starship.rs/install.sh | sudo bash -s -- -y
   rm -f $THE_HOME/.config/starship.toml
   mkdir -p $THE_HOME/.config
   ln -s $THE_HOME/.dotfiles/shell/starship.toml $THE_HOME/.config/starship.toml

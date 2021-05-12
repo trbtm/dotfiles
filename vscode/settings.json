@@ -1,7 +1,6 @@
 {
     "projects.configPath": "~/.vscode_projects.json",
     "workbench.startupEditor": "newUntitledFile",
-    "window.zoomLevel": 0,
     "vsicons.dontShowNewVersionMessage": true,
     "telemetry.enableTelemetry": false,
     "gitlens.advanced.telemetry.enabled": false,
@@ -40,7 +39,12 @@
         "**/.direnv*": true
 
     },
-    "workbench.editorAssociations": [],
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
     "[python]": {
         "editor.formatOnSave": true
     },

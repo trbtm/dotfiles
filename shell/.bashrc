@@ -124,3 +124,4 @@ else
 fi
 
 source ~/.dotfiles/shell/universal_settings.sh
+. "$HOME/.cargo/env"

@@ -1,5 +1,10 @@
 {
     "projects.configPath": "~/.vscode_projects.json",
+    "files.watcherExclude": {
+        "**/.direnv/**": true,
+        "**/.git/**": true,
+        "**/node_modules/**": true
+    },
     "workbench.startupEditor": "newUntitledFile",
     "vsicons.dontShowNewVersionMessage": true,
     "telemetry.enableTelemetry": false,
@@ -39,12 +44,9 @@
         "**/.direnv*": true
 
     },
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
     "[python]": {
         "editor.formatOnSave": true
     },
@@ -62,5 +64,10 @@
     "[css]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "debug.allowBreakpointsEverywhere": true
 }

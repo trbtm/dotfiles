@@ -41,21 +41,26 @@ user_yes_no "Do you want to configure the zsh shell?" configure_zsh
 # Starship
 #
 
-configure_starship()
+install_starship()
 {
   if ! command -v curl &> /dev/null; then
     echo "Please install curl on your system."
     echo "e.g. via 'sudo apt install curl'"
     exit 1
   fi
-  # bash <( curl -fsSL https://starship.rs/install.sh )
   curl -fsSL https://starship.rs/install.sh | sudo bash -s -- -y
+}
+
+user_yes_no "Do you want to install starship prompt?" install_starship
+
+configure_starship()
+{
   rm -f $THE_HOME/.config/starship.toml
   mkdir -p $THE_HOME/.config
   ln -s $THE_HOME/.dotfiles/shell/starship.toml $THE_HOME/.config/starship.toml
 }
 
-user_yes_no "Do you want to install and configure starship prompt?" configure_starship
+user_yes_no "Do you want to configure starship prompt?" configure_starship
 
 #
 # $THE_HOME/.gitconfig

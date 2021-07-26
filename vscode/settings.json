@@ -69,5 +69,6 @@
         "default": "right",
         "jupyter-notebook": "left"
     },
-    "debug.allowBreakpointsEverywhere": true
+    "debug.allowBreakpointsEverywhere": true,
+    "latex-workshop.view.pdf.viewer": "tab"
 }

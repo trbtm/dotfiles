@@ -1,3 +1,7 @@
+# QEMU
+export LANG=en_US.UTF-8
+export LIBVIRT_DEFAULT_URI="qemu:///system"
+
 # brew
 alias x86_brew="/usr/local/bin/brew"
 
@@ -23,9 +27,9 @@ create_pyenv()
     ln -s ~/.pyenv/versions/$2-$1 .direnv
     pyenv local $2-$1
 
-    ~/.pyenv/versions/$2-$1/bin/python -m pip install --upgrade pip
-    ~/.pyenv/versions/$2-$1/bin/python -m pip install wheels
-    ~/.pyenv/versions/$2-$1/bin/python -m pip install pip-tools
+    ~/.pyenv/versions/$2-$1/bin/pip3 install --upgrade pip
+    ~/.pyenv/versions/$2-$1/bin/pip3 install wheels
+    ~/.pyenv/versions/$2-$1/bin/pip3 install pip-tools
 }
 
 # Exercism

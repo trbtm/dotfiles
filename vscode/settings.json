@@ -25,6 +25,8 @@
     "projects.statusbarEnabled": false,
     "debug.openExplorerOnEnd": true,
     "workbench.colorTheme": "SynthWave '84",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
     "synthwave84.brightness": 0.75,
     "remote.SSH.defaultExtensions": [
         "eamodio.gitlens",

@@ -41,12 +41,3 @@ export PATH=$HOME/.cargo/bin:$PATH
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# SSH connections
-alias ad-vserver="ssh thore@62.171.167.26"
-alias uberspace-shared="ssh shared@eukelade.uberspace.de"
-alias uberspace-gbm7="ssh gbm7@wirtanen.uberspace.de"
-alias uberspace-keuk="ssh keuk@suhail.uberspace.de"
-alias uberspace-marq="ssh marq@alkaid.uberspace.de"
-alias uberspace-chimme="ssh chimme@pavo.uberspace.de"
-alias uberspace-vss="ssh vss@tuttle.uberspace.de"

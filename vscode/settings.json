@@ -72,5 +72,6 @@
         "jupyter-notebook": "left"
     },
     "debug.allowBreakpointsEverywhere": true,
-    "latex-workshop.view.pdf.viewer": "tab"
+    "latex-workshop.view.pdf.viewer": "tab",
+    "diffEditor.ignoreTrimWhitespace": false
 }

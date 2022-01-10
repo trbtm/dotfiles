@@ -17,7 +17,7 @@
     "workbench.colorCustomizations": {
         "editorRuler.foreground": "#464451"
     },
-    "editor.fontFamily": "MesloLGS NF",
+    "editor.fontFamily": "MesloLGL Nerd Font",
     "editor.fontLigatures": true,
     "terminal.integrated.fontFamily": "Fira Code",
     "debug.showInStatusBar": "never",

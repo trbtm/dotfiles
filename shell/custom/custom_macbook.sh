@@ -1,36 +1,9 @@
-# QEMU
-export LANG=en_US.UTF-8
-export LIBVIRT_DEFAULT_URI="qemu:///system"
-
 # brew
 alias x86_brew="/usr/local/bin/brew"
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv virtualenv-init -)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-create_pyenv()
-{
-    if [ ! -d ~/.pyenv/versions/$1 ]; then
-        pyenv install $1
-    fi
-    if [ ! -d ~/.pyenv/versions/$2-$1 ]; then
-        pyenv virtualenv $1 $2-$1
-    fi
-    rm -rf .direnv
-    ln -s ~/.pyenv/versions/$2-$1 .direnv
-    pyenv local $2-$1
-
-    ~/.pyenv/versions/$2-$1/bin/pip3 install --upgrade pip
-    ~/.pyenv/versions/$2-$1/bin/pip3 install wheels
-    ~/.pyenv/versions/$2-$1/bin/pip3 install pip-tools
-}
 
 # Exercism
 export PATH=$HOME/Exercism/bin:$PATH

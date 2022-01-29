@@ -7,7 +7,7 @@
     },
     "workbench.startupEditor": "newUntitledFile",
     "vsicons.dontShowNewVersionMessage": true,
-    "telemetry.enableTelemetry": false,
+    "telemetry.telemetryLevel": "off",
     "gitlens.advanced.telemetry.enabled": false,
     "extensions.ignoreRecommendations": true,
     "editor.insertSpaces": true,
@@ -73,5 +73,9 @@
     },
     "debug.allowBreakpointsEverywhere": true,
     "latex-workshop.view.pdf.viewer": "tab",
-    "diffEditor.ignoreTrimWhitespace": false
+    "diffEditor.ignoreTrimWhitespace": false,
+    "gitlens.advanced.messages": {
+        "suppressGitMissingWarning": true
+    },
+    "workbench.editor.untitled.hint": "hidden"
 }

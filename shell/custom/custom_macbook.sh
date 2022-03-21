@@ -1,3 +1,7 @@
+ # python
+alias python3.10="/opt/homebrew/Cellar/python@3.10/3.10.1/bin/python3"
+alias python3.9="/opt/homebrew/Cellar/python@3.9/3.9.10/bin/python3"
+
 # brew
 alias x86_brew="/usr/local/bin/brew"
 

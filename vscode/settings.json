@@ -53,6 +53,7 @@
         "editor.formatOnSave": true
     },
     "python.formatting.provider": "black",
+    "python.linting.flake8Enabled": true,
     "python.showStartPage": false,
     "jupyter.askForKernelRestart": false,
     "[typescript]": {
@@ -77,5 +78,10 @@
     "gitlens.advanced.messages": {
         "suppressGitMissingWarning": true
     },
-    "workbench.editor.untitled.hint": "hidden"
+    "workbench.editor.untitled.hint": "hidden",
+    "jupyter.widgetScriptSources": [
+        "jsdelivr.com",
+        "unpkg.com"
+    ],
+    "auto-build.defaultEnv.name": "sanguino1284p"
 }

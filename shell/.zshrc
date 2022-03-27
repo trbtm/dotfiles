@@ -69,19 +69,19 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
-		macos
         zsh-autosuggestions)
+
+if [ "$(uname)" = "Darwin" ]; then
+    alias ls='ls -G'
+    plugins+=(macos)
+elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
+    alias ls='ls --color=auto'
+fi
 
 source $ZSH/oh-my-zsh.sh
 
 if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
-fi
-
-if [ "$(uname)" = "Darwin" ]; then
-    alias ls='ls -G'
-elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
-    alias ls='ls --color=auto'
 fi
 
 source ~/.dotfiles/shell/aliases.sh

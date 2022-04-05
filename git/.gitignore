@@ -3,3 +3,6 @@
 .python-version
 .direnv
 .DS_Store
+
+.nvmrc
+environment.ts

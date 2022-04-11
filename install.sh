@@ -29,9 +29,8 @@ configure_zsh()
   ln -s $THE_HOME/.dotfiles/shell/.zshrc $THE_HOME/.zshrc
   rm -rf $THE_HOME/.dotfiles/ohmyzsh
 
-  cd $THE_HOME/.dotfiles
-  git --git-dir=$THE_HOME/.dotfiles/.git submodule init
-  git --git-dir=$THE_HOME/.dotfiles/.git submodule update
+  git -C $THE_HOME/.dotfiles submodule init
+  git -C $THE_HOME/.dotfiles submodule update
   git clone https://github.com/zsh-users/zsh-autosuggestions $THE_HOME/.dotfiles/ohmyzsh/plugins/zsh-autosuggestions
 }
 
@@ -48,7 +47,7 @@ install_starship()
     echo "e.g. via 'sudo apt install curl'"
     exit 1
   fi
-  curl -fsSL https://starship.rs/install.sh | sudo bash -s -- -y
+  curl -fsSL https://starship.rs/install.sh | sudo sh -s -- -y
 }
 
 user_yes_no "Do you want to install starship prompt?" install_starship
@@ -65,6 +64,7 @@ user_yes_no "Do you want to configure starship prompt?" configure_starship
 #
 # $THE_HOME/.gitconfig
 #
+
 GIT_CONFIG=false
 link_gitconfig()
 {
@@ -79,6 +79,7 @@ user_yes_no "Do you wish to link ~/.gitconfig?" link_gitconfig
 #
 # $THE_HOME/.gitignore
 #
+
 link_gitignore()
 {
   rm -f $THE_HOME/.gitignore
@@ -97,6 +98,20 @@ user_yes_no "Do you wish to link ~/.gitignore?" link_gitignore
 #
 # Visual Studio Code
 #
+
+link_vi()
+{
+  rm -f $THE_HOME/.vimrc
+  ln -s $THE_HOME/.dotfiles/.vimrc $THE_HOME/.vimrc
+  echo "Linked vimrc."
+}
+
+user_yes_no "Do you wish to link ~/.vimrc?" link_vi
+
+#
+# Visual Studio Code
+#
+
 link_vscode_settings_linux()
 {
   rm -f $THE_HOME/.config/Code/User/settings.json

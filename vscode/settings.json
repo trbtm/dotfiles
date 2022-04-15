@@ -1,32 +1,60 @@
 {
-    "projects.configPath": "~/.vscode_projects.json",
-    "files.watcherExclude": {
-        "**/.venv/**": true,
-        "**/.git/**": true,
-        "**/node_modules/**": true
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
     },
-    "workbench.startupEditor": "newUntitledFile",
-    "vsicons.dontShowNewVersionMessage": true,
-    "telemetry.telemetryLevel": "off",
-    "extensions.ignoreRecommendations": true,
-    "editor.insertSpaces": true,
-    "editor.tabSize": 4,
-    "editor.rulers": [120],
-    "editor.tabCompletion": "on",
-    "workbench.colorCustomizations": {
-        "editorRuler.foreground": "#464451"
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
     },
-    "editor.fontFamily": "MesloLGL Nerd Font",
-    "editor.fontLigatures": true,
-    "terminal.integrated.fontFamily": "Fira Code",
+    "[python]": {
+        "editor.formatOnSave": true
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        "editor.formatOnSave": true
+    },
+    "auto-build.defaultEnv.name": "sanguino1284p",
+    "debug.allowBreakpointsEverywhere": true,
+    "debug.openExplorerOnEnd": true,
     "debug.showInStatusBar": "never",
     "debug.toolBarLocation": "hidden",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.fontFamily": "MesloLGL Nerd Font",
+    "editor.fontLigatures": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.insertSpaces": true,
+    "editor.rulers": [
+        120
+    ],
+    "editor.tabCompletion": "on",
+    "editor.tabSize": 4,
+    "explorer.confirmDragAndDrop": false,
+    "extensions.ignoreRecommendations": true,
+    "files.watcherExclude": {
+        "**/.git/**": true,
+        "**/.venv/**": true,
+        "**/node_modules/**": true
+    },
+    "gitlens.advanced.messages": {
+        "suppressGitMissingWarning": true
+    },
+    "jupyter.askForKernelRestart": false,
+    "jupyter.widgetScriptSources": [
+        "jsdelivr.com",
+        "unpkg.com"
+    ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "partialDiff.enableTelemetry": false,
+    "projects.configPath": "~/.vscode_projects.json",
     "projects.statusbarEnabled": false,
-    "debug.openExplorerOnEnd": true,
-    "workbench.colorTheme": "SynthWave '84",
-    "workbench.editor.enablePreview": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "synthwave84.brightness": 0.75,
+    "python.formatting.provider": "black",
+    "python.linting.flake8Enabled": true,
     "remote.SSH.defaultExtensions": [
         "eamodio.gitlens",
         "mrmlnc.vscode-duplicate",
@@ -36,52 +64,27 @@
         "fabiospampinato.vscode-statusbar-debugger",
         "robbowen.synthwave-vscode"
     ],
-    "explorer.confirmDragAndDrop": false,
-    "workbench.iconTheme": "vscode-icons",
     "search.exclude": {
+        "**/.direnv*": true,
         "**/.git": true,
-        "**/node_modules": true,
-        "**/.direnv*": true
-
+        "**/node_modules": true
     },
+    "synthwave84.brightness": 0.75,
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.fontFamily": "Fira Code",
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "~/.vimrc",
+    "vsicons.dontShowNewVersionMessage": true,
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#464451"
+    },
+    "workbench.colorTheme": "SynthWave '84",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.untitled.hint": "hidden",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
-    "[python]": {
-        "editor.formatOnSave": true
-    },
-    "python.formatting.provider": "black",
-    "python.linting.flake8Enabled": true,
-    "jupyter.askForKernelRestart": false,
-    "[typescript]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[html]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[css]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "notebook.cellToolbarLocation": {
-        "default": "right",
-        "jupyter-notebook": "left"
-    },
-    "debug.allowBreakpointsEverywhere": true,
-    "latex-workshop.view.pdf.viewer": "tab",
-    "diffEditor.ignoreTrimWhitespace": false,
-    "gitlens.advanced.messages": {
-        "suppressGitMissingWarning": true
-    },
-    "workbench.editor.untitled.hint": "hidden",
-    "jupyter.widgetScriptSources": [
-        "jsdelivr.com",
-        "unpkg.com"
-    ],
-    "auto-build.defaultEnv.name": "sanguino1284p",
-    "editor.bracketPairColorization.enabled": true,
-    "editor.guides.bracketPairs": "active",
-    "partialDiff.enableTelemetry": false
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.startupEditor": "newUntitledFile"
 }

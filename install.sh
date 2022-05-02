@@ -29,8 +29,7 @@ configure_zsh()
   ln -s $THE_HOME/.dotfiles/shell/.zshrc $THE_HOME/.zshrc
   rm -rf $THE_HOME/.dotfiles/ohmyzsh
 
-  git -C $THE_HOME/.dotfiles submodule init
-  git -C $THE_HOME/.dotfiles submodule update
+  git clone https://github.com/ohmyzsh/ohmyzsh.git $THE_HOME/.dotfiles/ohmyzsh 
   git clone https://github.com/zsh-users/zsh-autosuggestions $THE_HOME/.dotfiles/ohmyzsh/plugins/zsh-autosuggestions
 }
 

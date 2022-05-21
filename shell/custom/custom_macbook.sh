@@ -46,6 +46,12 @@ export PATH=$HOME/Exercism/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 
 #
+# Go
+#
+
+export GOPATH=$HOME/.go
+
+#
 # misc
 #
 

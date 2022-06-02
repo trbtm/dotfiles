@@ -1,4 +1,16 @@
 #
+# brew
+#
+
+brew_upgrade() {
+    tmp_file=$(mktemp)
+    defaults export com.apple.dock "$tmp_file"
+    bash -c "brew upgrade --cask --greedy"
+    defaults import com.apple.dock "$tmp_file"
+    killall Dock
+}
+
+#
 # nvm
 #
 

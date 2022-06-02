@@ -62,7 +62,8 @@
         "ryu1kn.partial-diff",
         "2gua.rainbow-brackets",
         "fabiospampinato.vscode-statusbar-debugger",
-        "robbowen.synthwave-vscode"
+        "robbowen.synthwave-vscode",
+        "mhutchie.git-graph"
     ],
     "search.exclude": {
         "**/.direnv*": true,
@@ -86,5 +87,8 @@
         "*.ipynb": "jupyter-notebook"
     },
     "workbench.iconTheme": "vscode-icons",
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
 }

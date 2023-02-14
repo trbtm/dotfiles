@@ -95,7 +95,7 @@ link_gitignore()
 user_yes_no "Do you wish to link ~/.gitignore?" link_gitignore
 
 #
-# Visual Studio Code
+# Vim
 #
 
 link_vi()

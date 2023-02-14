@@ -55,8 +55,6 @@
     "notebook.lineNumbers": "on",
     "partialDiff.enableTelemetry": false,
     "prettier.tabWidth": 4,
-    "projects.configPath": "~/.vscode_projects.json",
-    "projects.statusbarEnabled": false,
     "python.formatting.provider": "black",
     "python.linting.flake8Enabled": true,
     "redhat.telemetry.enabled": false,
@@ -96,5 +94,16 @@
         "*.ipynb": "jupyter-notebook"
     },
     "workbench.iconTheme": "vscode-icons",
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "projectManager.tags": [
+        "Exercism",
+        "home-automation",
+        "AnalogDream",
+        "Personal",
+        "Websites"
+    ],
+    "projectManager.git.baseFolders": [
+        "~/github"
+    ],
+    "projectManager.projectsLocation": "~/.vscode_projects.json"
 }

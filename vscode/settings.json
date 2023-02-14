@@ -1,19 +1,4 @@
 {
-    "[css]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    },
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    },
-    "[python]": {
-        "editor.formatOnSave": true
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features",
-        "editor.formatOnSave": true
-    },
     "auto-build.defaultEnv.name": "sanguino1284p",
     "debug.allowBreakpointsEverywhere": true,
     "debug.openExplorerOnEnd": true,
@@ -21,17 +6,33 @@
     "debug.toolBarLocation": "hidden",
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.bracketPairColorization.enabled": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.fontFamily": "MesloLGL Nerd Font",
-    "editor.fontLigatures": true,
+    "editor.fontLigatures": false,
     "editor.guides.bracketPairs": "active",
     "editor.insertSpaces": true,
+    "editor.lineNumbers": "on",
     "editor.rulers": [
         120
     ],
     "editor.tabCompletion": "on",
     "editor.tabSize": 4,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "keyword.other.dotenv",
+                "settings": {
+                    "foreground": "#FF000005"
+                }
+            }
+        ]
+    },
     "explorer.confirmDragAndDrop": false,
     "extensions.ignoreRecommendations": true,
+    "files.associations": {
+        "*.ftr": "apacheconf",
+        "*.kml": "xml"
+    },
     "files.watcherExclude": {
         "**/.git/**": true,
         "**/.venv/**": true,
@@ -40,6 +41,7 @@
     "gitlens.advanced.messages": {
         "suppressGitMissingWarning": true
     },
+    "gitlens.hovers.currentLine.over": "line",
     "jupyter.askForKernelRestart": false,
     "jupyter.widgetScriptSources": [
         "jsdelivr.com",
@@ -50,17 +52,22 @@
         "default": "right",
         "jupyter-notebook": "left"
     },
+    "notebook.lineNumbers": "on",
     "partialDiff.enableTelemetry": false,
+    "prettier.tabWidth": 4,
     "projects.configPath": "~/.vscode_projects.json",
     "projects.statusbarEnabled": false,
     "python.formatting.provider": "black",
     "python.linting.flake8Enabled": true,
+    "redhat.telemetry.enabled": false,
     "remote.SSH.defaultExtensions": [
         "eamodio.gitlens",
         "mrmlnc.vscode-duplicate",
+        "wraith13.bracket-lens",
         "oderwat.indent-rainbow",
+        "aaron-bond.better-comments",
+        "usernamehw.errorlens",
         "ryu1kn.partial-diff",
-        "2gua.rainbow-brackets",
         "fabiospampinato.vscode-statusbar-debugger",
         "robbowen.synthwave-vscode",
         "mhutchie.git-graph"
@@ -73,9 +80,11 @@
     "synthwave84.brightness": 0.75,
     "telemetry.telemetryLevel": "off",
     "terminal.integrated.fontFamily": "Fira Code",
+    "terminal.integrated.scrollback": 100000000,
     "vim.vimrc.enable": true,
     "vim.vimrc.path": "~/.vimrc",
     "vsicons.dontShowNewVersionMessage": true,
+    "window.commandCenter": true,
     "workbench.colorCustomizations": {
         "editorRuler.foreground": "#464451"
     },
@@ -87,8 +96,5 @@
         "*.ipynb": "jupyter-notebook"
     },
     "workbench.iconTheme": "vscode-icons",
-    "workbench.startupEditor": "newUntitledFile",
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    }
+    "workbench.startupEditor": "newUntitledFile"
 }

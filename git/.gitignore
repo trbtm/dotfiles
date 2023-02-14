@@ -1,8 +1,5 @@
 *~
 *.py[cod]
-.python-version
-.direnv
+.venv
 .DS_Store
-
-.nvmrc
-environment.ts
+*.d

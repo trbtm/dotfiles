@@ -106,36 +106,3 @@ link_vi()
 }
 
 user_yes_no "Do you wish to link ~/.vimrc?" link_vi
-
-#
-# Visual Studio Code
-#
-
-link_vscode_settings_linux()
-{
-  rm -f $THE_HOME/.config/Code/User/settings.json
-  mkdir -p $THE_HOME/.config/Code/User
-  ln -s $THE_HOME/.dotfiles/vscode/settings.json $THE_HOME/.config/Code/User/settings.json
-  echo "Linked Visual Studio Code Settings. (Linux)"
-}
-
-user_yes_no "Do you wish to link ~/.config/Code/User/settings.json? (Linux)" link_vscode_settings_linux
-
-link_vscode_settings_windows()
-{
-  rm -f $THE_HOME/AppData/Roaming/Code/User/settings.json
-  mkdir -p $THE_HOME/AppData/Roaming/Code/User/
-  link $THE_HOME/AppData/Roaming/Code/User/settings.json $THE_HOME/.dotfiles/vscode/settings.json
-  echo "Linked Visual Studio Code Settings. (Windows)"
-}
-
-user_yes_no "Do you wish to link ~/AppData/Roaming/Code/User/settings.json? (Windows)" link_vscode_settings_windows
-
-link_vscode_settings_mac()
-{
-  rm -f $THE_HOME/Library/Application\ Support/Code/User/settings.json
-  ln -s $THE_HOME/.dotfiles/vscode/settings.json $THE_HOME/Library/Application\ Support/Code/User/settings.json
-  echo "Linked Visual Studio Code Settings. (macOS)"
-}
-
-user_yes_no "Do you wish to link ~/Library/Application Support/Code/User/settings.json? (macOS)" link_vscode_settings_mac

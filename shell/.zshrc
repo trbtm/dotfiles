@@ -71,13 +71,6 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(git
         zsh-autosuggestions)
 
-if [ "$(uname)" = "Darwin" ]; then
-    alias ls='ls -G'
-    plugins+=(macos)
-elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
-    alias ls='ls --color=auto'
-fi
-
 source $ZSH/oh-my-zsh.sh
 
 if command -v starship &> /dev/null; then

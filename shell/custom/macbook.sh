@@ -10,6 +10,8 @@ brew_upgrade() {
     killall Dock
 }
 
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 #
 # nvm
 #

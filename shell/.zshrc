@@ -77,5 +77,8 @@ if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
 fi
 
+# zsh specific aliases
+alias hg="history | grep"
+
 source ~/.dotfiles/shell/aliases.sh
 source ~/.dotfiles/shell/universal_settings.sh

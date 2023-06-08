@@ -71,6 +71,10 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(git
         zsh-autosuggestions)
 
+if [ "$(uname)" = "Darwin" ]; then
+    plugins+=(macos)
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 if command -v starship &> /dev/null; then

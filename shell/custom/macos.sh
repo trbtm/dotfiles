@@ -64,9 +64,3 @@ export PATH=$HOME/.cargo/bin:$PATH
 #
 
 export GOPATH=$HOME/.go
-
-#
-# misc
-#
-
-alias fleetlabui_git_daemon='git daemon --base-path=$(realpath ~)/Fleetlab --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose --port=1000'

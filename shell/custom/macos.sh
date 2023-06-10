@@ -45,7 +45,7 @@ load-nvmrc
 # pyenv
 #
 
-eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 
 #
 # Exercism
